@@ -14,7 +14,7 @@ public class Login1 : MonoBehaviour {
 
 
 
-	string userUrl = "http://localhost/math/insert.php";
+	string userUrl = "http://localhost/game/insert.php";
 
 	public void changeScene(string sceneName)
 	{

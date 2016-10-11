@@ -6,7 +6,7 @@ public class loginscript : MonoBehaviour {
 	public static string username = "";
 	public static string password = "";
 
-	string userUrl = "http://localhost/math/user.php";
+	string userUrl = "http://localhost/game/user.php";
 
 	public void getUsername (string getname){
 		username = getname;
