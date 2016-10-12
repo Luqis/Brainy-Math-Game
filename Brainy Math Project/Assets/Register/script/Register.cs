@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Register : MonoBehaviour {
@@ -14,6 +15,32 @@ public class Register : MonoBehaviour {
 
 
 	string userUrl = "http://localhost/game/register.php";
+
+	public GameObject window;
+	public Text messageField;
+	private bool msg = false;
+	public static bool donemsg = false;
+
+	public void Show(string message){
+		Debug.Log ("youhere");
+		if (msg == true) {
+			messageField.text = message;
+			window.SetActive (true);
+			msg = false;
+		}
+	}
+
+	public void Hide(){
+		Debug.Log ("DONEMSG =" + donemsg);
+		if (donemsg == false) {
+			window.SetActive (false);
+		} else if (donemsg == true) {
+			done = true;
+			changeScene ("Login");
+		}
+
+	}
+
 
 	public void changeScene(string sceneName)
 	{
@@ -38,11 +65,13 @@ public class Register : MonoBehaviour {
 
 	public void Create (){
 		
-		if (password == cpassword) {
+		if (password == cpassword && password != "") {
 			
 			StartCoroutine ("x");
+		} else {
+			msg = true;
+			Show ("Password Not Match!");
 		}
-
 
 
 		}
@@ -58,10 +87,18 @@ public class Register : MonoBehaviour {
 		 yield return www;
 		Debug.Log (www.text);
 
-		if (www.text == "OK") {
+		string x = www.text;
+		if (x == "OK") {
 			done = true;
 			Debug.Log ("Back Login");
-			changeScene("Login");
+			msg = true;
+			Show ("DONE Register!");
+			donemsg = true;
+			Debug.Log ("DONEMSG =" + donemsg);
+			//changeScene ("Login");
+		} else if (x == "Failed") {
+			msg = true;
+			Show ("Username Has Been used!");
 		}
 
 

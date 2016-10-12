@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Login : MonoBehaviour {
@@ -7,6 +8,22 @@ public class Login : MonoBehaviour {
 	public static string password = "";
 
 	string userUrl = "http://localhost/game/login.php";
+
+	public GameObject window;
+	public Text messageField;
+	private bool msg = false;
+
+	public void Show(string message){
+		if (msg == true) {
+			messageField.text = message;
+			window.SetActive (true);
+		}
+	}
+
+	public void Hide(){
+		window.SetActive (false);
+	}
+
 
 	public void getUsername (string getname){
 		username = getname;
@@ -31,6 +48,26 @@ public class Login : MonoBehaviour {
 
 			yield return www;
 			Debug.Log (www.text);
+		string x = www.text;
+
+		if (x == "X") {
+			msg = true;
+			Debug.Log (x);
+			Show ("Wrong username and password!");
+
+
+		}
+		else if(x =="OK"){
+			msg = true;
+			Debug.Log (x);
+			Show ("(GO MAIN MENU)");
+		}
+
+		else if(x =="No this username"){
+			msg = true;
+			Debug.Log (x);
+			Show ("No This Username, please register!");
+		}
 
 }
 	}	
