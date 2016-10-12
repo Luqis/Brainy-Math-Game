@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Login : MonoBehaviour {
@@ -58,9 +59,7 @@ public class Login : MonoBehaviour {
 
 		}
 		else if(x =="OK"){
-			msg = true;
-
-			Show ("(GO MAIN MENU)");
+			SceneManager.LoadScene ("MainMenu");
 		}
 
 		else if(x =="No this username"){

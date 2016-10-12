@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Register : MonoBehaviour {
@@ -44,7 +45,7 @@ public class Register : MonoBehaviour {
 	public void changeScene(string sceneName)
 	{
 		if (done == true) {
-			Application.LoadLevel (sceneName);
+			SceneManager.LoadScene (sceneName);
 		}
 
 

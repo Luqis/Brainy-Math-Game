@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Login/Login.unity
+- path: Assets/Splash Screen/SplashScreen.unity
   isLoaded: 1
   isActive: 1
