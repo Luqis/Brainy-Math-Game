@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class loginscript : MonoBehaviour {
+public class Login : MonoBehaviour {
 
 	public static string username = "";
 	public static string password = "";
 
-	string userUrl = "http://localhost/game/user.php";
+	string userUrl = "http://localhost/game/login.php";
 
 	public void getUsername (string getname){
 		username = getname;
@@ -16,9 +16,7 @@ public class loginscript : MonoBehaviour {
 		password= getpass;
 }
 
-	public void Login (){
-
-
+	public void Mula (){
 
 		StartCoroutine ("login");
 	}

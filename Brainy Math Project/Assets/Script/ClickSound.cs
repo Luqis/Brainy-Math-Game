@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ClickSound1 : MonoBehaviour {
+public class ClickSound : MonoBehaviour {
 	public AudioClip sound1;
 	private Button button { get { return GetComponent<Button> (); } }
 	private AudioSource source{get { return GetComponent<AudioSource> ();}}

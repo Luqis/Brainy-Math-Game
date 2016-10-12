@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Login1 : MonoBehaviour {
+public class Register : MonoBehaviour {
 
 	public string inputUsername;
 	private bool done = false;
 	public static string username = "";
 	public static string password = "";
 
-	private string cusername ="";
 	private string cpassword = "";
 	public string Confirmpassword="";
 
 
 
-	string userUrl = "http://localhost/game/insert.php";
+	string userUrl = "http://localhost/game/register.php";
 
 	public void changeScene(string sceneName)
 	{
