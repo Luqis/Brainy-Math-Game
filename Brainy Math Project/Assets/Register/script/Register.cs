@@ -22,7 +22,6 @@ public class Register : MonoBehaviour {
 	public static bool donemsg = false;
 
 	public void Show(string message){
-		Debug.Log ("youhere");
 		if (msg == true) {
 			messageField.text = message;
 			window.SetActive (true);
@@ -31,7 +30,7 @@ public class Register : MonoBehaviour {
 	}
 
 	public void Hide(){
-		Debug.Log ("DONEMSG =" + donemsg);
+
 		if (donemsg == false) {
 			window.SetActive (false);
 		} else if (donemsg == true) {
@@ -84,18 +83,16 @@ public class Register : MonoBehaviour {
 		form.AddField ("passwordPost", password);
 		WWW	www = new WWW (userUrl, form);
 
-		 yield return www;
-		Debug.Log (www.text);
+		yield return www;
 
 		string x = www.text;
 		if (x == "OK") {
 			done = true;
-			Debug.Log ("Back Login");
+		
 			msg = true;
 			Show ("DONE Register!");
 			donemsg = true;
-			Debug.Log ("DONEMSG =" + donemsg);
-			//changeScene ("Login");
+		
 		} else if (x == "Failed") {
 			msg = true;
 			Show ("Username Has Been used!");

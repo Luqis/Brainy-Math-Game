@@ -47,25 +47,25 @@ public class Login : MonoBehaviour {
 			WWW	www = new WWW (userUrl, form);
 
 			yield return www;
-			Debug.Log (www.text);
-		string x = www.text;
+			
+			string x = www.text;
 
 		if (x == "X") {
 			msg = true;
-			Debug.Log (x);
+
 			Show ("Wrong username and password!");
 
 
 		}
 		else if(x =="OK"){
 			msg = true;
-			Debug.Log (x);
+
 			Show ("(GO MAIN MENU)");
 		}
 
 		else if(x =="No this username"){
 			msg = true;
-			Debug.Log (x);
+
 			Show ("No This Username, please register!");
 		}
 
