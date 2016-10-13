@@ -53,9 +53,7 @@ public class Login : MonoBehaviour {
 
 		if (x == "X") {
 			msg = true;
-
 			Show ("Wrong username and password!");
-
 
 		}
 		else if(x =="OK"){
