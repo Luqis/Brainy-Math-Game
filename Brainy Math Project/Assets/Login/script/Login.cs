@@ -56,15 +56,28 @@ public class Login : MonoBehaviour {
 			Show ("Wrong username and password!");
 
 		}
-		else if(x =="OK"){
+		else if(x == "OK"){
+			setPref(username);
+			Debug.Log (www.text);
 			SceneManager.LoadScene ("MainMenu");
 		}
 
 		else if(x =="No this username"){
 			msg = true;
 
+
 			Show ("No This Username, please register!");
 		}
 
-}
+		}
+
+	public void setPref(string id)
+	{
+		GameObject thePlayer = GameObject.Find("prefManager");
+		prefmanager playerScript = thePlayer.GetComponent<prefmanager>();
+		playerScript.userID = id;
+		Debug.Log ("save_user" + playerScript.userID);
+
+	}
+
 	}	
