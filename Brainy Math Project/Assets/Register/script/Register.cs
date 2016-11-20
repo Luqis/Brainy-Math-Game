@@ -15,7 +15,7 @@ public class Register : MonoBehaviour {
 
 
 
-	string userUrl = "http://localhost/game/register.php";
+	string userUrl = "lrgs.ftsm.ukm.my/users/a150737/game/register.php";
 
 	public GameObject window;
 	public Text messageField;
@@ -24,8 +24,9 @@ public class Register : MonoBehaviour {
 
 	public void Show(string message){
 		if (msg == true) {
-			messageField.text = message;
 			window.SetActive (true);
+			messageField.text = message;
+
 			msg = false;
 		}
 	}

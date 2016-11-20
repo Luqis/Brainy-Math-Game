@@ -61,3 +61,5 @@ C:\Users\Luqman Idris\Desktop\Brainy Math Project\Temp\bin\Debug\UnityEngine.Net
 C:\Users\Luqman Idris\Desktop\Brainy Math Project\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Luqman Idris\Desktop\Brainy Math Project\obj\Debug\Assembly-CSharp.dll
 C:\Users\Luqman Idris\Desktop\Brainy Math Project\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Luqman Idris\Documents\GitHub\Brainy-Math-Project\Brainy Math Project\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Luqman Idris\Documents\GitHub\Brainy-Math-Project\Brainy Math Project\Temp\bin\Debug\UnityEngine.Analytics.xml

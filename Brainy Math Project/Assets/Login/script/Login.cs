@@ -8,7 +8,7 @@ public class Login : MonoBehaviour {
 	public static string username = "";
 	public static string password = "";
 
-	string userUrl = "http://localhost/game/login.php";
+	string userUrl = "lrgs.ftsm.ukm.my/users/a150737/game/login.php";
 
 	public GameObject window;
 	public Text messageField;

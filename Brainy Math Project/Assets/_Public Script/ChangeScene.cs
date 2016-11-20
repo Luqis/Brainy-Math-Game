@@ -10,8 +10,8 @@ public class ChangeScene : MonoBehaviour {
 		SceneManager.LoadScene (sceneName);
 	}
 
-	void Update () {
-		
+	public void stopMusic () {
+		Destroy(GameObject.Find("MUSIC"));	
 	}
 
 }

@@ -17,3 +17,19 @@ EditorBuildSettings:
     path: Assets/Difficulties/Difficulties.unity
   - enabled: 1
     path: Assets/Game/EasyLevel(d1).unity
+  - enabled: 1
+    path: Assets/SubLevel/SubLevelE.unity
+  - enabled: 1
+    path: Assets/Game/EasyLevel(d2).unity
+  - enabled: 1
+    path: Assets/Game/mediumLevel1.unity
+  - enabled: 1
+    path: Assets/SubLevel/SubLevelM.unity
+  - enabled: 1
+    path: Assets/SubLevel/SubLevelH.unity
+  - enabled: 1
+    path: Assets/Game/mediumLevel2.unity
+  - enabled: 1
+    path: Assets/Game/hardlevel1.unity
+  - enabled: 1
+    path: Assets/Game/hardlevel2.unity

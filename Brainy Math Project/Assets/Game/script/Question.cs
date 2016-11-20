@@ -13,7 +13,8 @@ public class Question : MonoBehaviour {
 	private Stat2 player_health;
 
 	List<int> randomNumbers = new List<int>();
-	public string questionUrl = "http://localhost/game/upload.php";
+	public string questionUrl = "lrgs.ftsm.ukm.my/users/a150737/game/upload.php";
+	public string Url = "lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE1.php";
 	public string[] questions;
 	public string titleID;
 	public Text title;
@@ -27,6 +28,9 @@ public class Question : MonoBehaviour {
 	public float score=0;
 	public Text total_score;
 	public Text username;
+	public GameObject Gameover;
+	public GameObject Gameover_lose;
+	public Text messagescore;
 
 
 
@@ -53,19 +57,26 @@ public class Question : MonoBehaviour {
 		health.Initialize ();
 		player_health.Initialize ();
 		getRandomQuestion ();
-		btn1.gameObject.SetActive(false);	
+		btn1.gameObject.SetActive(false);
 	}
 
+	public void gobackmenu(){
+		SceneManager.LoadScene ("SubLevelE", LoadSceneMode.Single);
+	}
 
 
 
 	void getRandomQuestion(){
 
 		if (randomNumbers.Count <= 0) {
-			Debug.Log ("No more Question");
-			Debug.Log ("Correct Answer: " + score);
-			Debug.Log ("total ques: " + (questions.Length-1));
-			Debug.Log("Total_score: " + (score/(questions.Length-1))*100);
+			//Debug.Log ("No more Question");
+			//Debug.Log ("Correct Answer: " + score);
+			//Debug.Log ("total ques: " + (questions.Length-1));
+			//Debug.Log("Total_score: " + (score/(questions.Length-1))*100);
+
+			StartCoroutine ("updatescore");
+
+
 		} else {
 
 		
@@ -77,10 +88,32 @@ public class Question : MonoBehaviour {
 
 
 		}
-
-
-
 	}
+		IEnumerator updatescore()
+		{
+			WWWForm form2 = new WWWForm();
+			double total_score = (score/(questions.Length-1))*100;
+			string totalscore = total_score.ToString ();
+			form2.AddField("username", username.text);
+			form2.AddField("score", totalscore);
+			Debug.Log(username.text);
+			Debug.Log(totalscore);
+
+			WWW download2 = new WWW(Url, form2);
+		yield return download2;
+		Debug.Log (download2.text);
+
+			Gameover.SetActive (true);
+			messagescore.text = totalscore;
+
+		}
+
+
+
+
+
+
+
 
 
 
@@ -118,6 +151,8 @@ public class Question : MonoBehaviour {
 			player_health.CurrentVal -= 20;
 			if (player_health.CurrentVal <= 0) {
 				Debug.Log ("GAME OVER");
+				Gameover_lose.SetActive (true);
+
 			}
 			getRandomQuestion ();
 
