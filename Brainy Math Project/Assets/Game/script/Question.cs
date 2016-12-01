@@ -13,8 +13,8 @@ public class Question : MonoBehaviour {
 	private Stat2 player_health;
 
 	List<int> randomNumbers = new List<int>();
-	public string questionUrl = "lrgs.ftsm.ukm.my/users/a150737/game/upload.php";
-	public string Url = "lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE1.php";
+	public string questionUrl = "";
+	public string Url = "";
 	public string[] questions;
 	public string titleID;
 	public Text title;
@@ -31,11 +31,16 @@ public class Question : MonoBehaviour {
 	public GameObject Gameover;
 	public GameObject Gameover_lose;
 	public Text messagescore;
+	public string tablescore;
+	public Text time;
 
-
+	float timeLeft = 60.0f;
+	bool startTime = false;
 
 	IEnumerator Start(){
-		WWW questionData = new WWW (questionUrl);
+		WWWForm table_form = new WWWForm();
+		table_form.AddField("questPost", tablescore);
+		WWW questionData = new WWW (questionUrl,table_form);
 		yield return questionData;
 		string questionDataString = questionData.text;
 		//Debug.Log (questionDataString);
@@ -49,8 +54,17 @@ public class Question : MonoBehaviour {
 		prefmanager playerScript2 = thePlayer2.GetComponent<prefmanager>();
 		username.text = playerScript2.userID;
 
+		InvokeRepeating ("minusTime", 1.0f, 1.0f);
 
+	}
 
+	void Update(){
+		time.text = "Timer: " + timeLeft;
+	}
+
+	void minusTime (){
+		if(startTime == true)
+		timeLeft--;
 	}
 
 	public void Hide(){
@@ -58,6 +72,7 @@ public class Question : MonoBehaviour {
 		player_health.Initialize ();
 		getRandomQuestion ();
 		btn1.gameObject.SetActive(false);
+		startTime = true;
 	}
 
 	public void gobackmenu(){
@@ -108,15 +123,6 @@ public class Question : MonoBehaviour {
 
 		}
 
-
-
-
-
-
-
-
-
-
 	public void Show(int num){
 		
 		title.text = GetDataValue (questions [num], "title:");			
@@ -144,11 +150,13 @@ public class Question : MonoBehaviour {
 			Debug.Log ("CORRECT");
 			health.CurrentVal -= 10;
 			score++;
+			timeLeft += 2;
 			getRandomQuestion ();
 
 		} else {
 			Debug.Log ("Wrong");
 			player_health.CurrentVal -= 20;
+			timeLeft -= 5;
 			if (player_health.CurrentVal <= 0) {
 				Debug.Log ("GAME OVER");
 				Gameover_lose.SetActive (true);

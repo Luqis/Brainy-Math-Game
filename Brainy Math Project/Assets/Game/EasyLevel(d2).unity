@@ -430,7 +430,8 @@ RectTransform:
   - {fileID: 1439403114}
   - {fileID: 1154594217}
   - {fileID: 1573063923}
-  - {fileID: 1133880333}
+  - {fileID: 586316060}
+  - {fileID: 1245922416}
   - {fileID: 953573670}
   - {fileID: 1574554175}
   m_Father: {fileID: 709545341}
@@ -549,7 +550,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: gobackmenu
         m_Mode: 1
         m_Arguments:
@@ -672,7 +673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: checkAns
         m_Mode: 5
         m_Arguments:
@@ -726,7 +727,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 394584733}
-  - 114: {fileID: 394584732}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -734,43 +734,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &394584732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 394584731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e8ce2f90d39064b917b4525b805da2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health:
-    bar: {fileID: 0}
-    maxVal: 0
-    currentVal: 0
-  player_health:
-    bar: {fileID: 0}
-    maxVal: 0
-    currentVal: 0
-  questionUrl: 687474703a2f2f6c6f63616c686f73742f67616d652f75706c6f61642e706870
-  Url: lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE1.php
-  questions: []
-  titleID: 
-  title: {fileID: 0}
-  Choice1: {fileID: 0}
-  Choice2: {fileID: 0}
-  Choice3: {fileID: 0}
-  Choice4: {fileID: 0}
-  Answer: 
-  i: 0
-  btn1: {fileID: 0}
-  score: 0
-  total_score: {fileID: 0}
-  username: {fileID: 0}
-  Gameover: {fileID: 0}
-  Gameover_lose: {fileID: 0}
-  messagescore: {fileID: 0}
 --- !u!4 &394584733
 Transform:
   m_ObjectHideFlags: 0
@@ -932,6 +895,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516306863}
+--- !u!1 &586316059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 586316060}
+  - 222: {fileID: 586316062}
+  - 114: {fileID: 586316061}
+  m_Layer: 5
+  m_Name: Nametxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &586316060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586316059}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 181480880}
+  m_RootOrder: 9
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 327, y: -239.0001}
+  m_SizeDelta: {x: 193, y: 62.428}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &586316061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586316059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.093103446, g: 0.0732505, b: 0.0732505, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: PlayerName
+--- !u!222 &586316062
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586316059}
 --- !u!1 &709545336
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +981,7 @@ GameObject:
   - 92: {fileID: 709545340}
   - 124: {fileID: 709545339}
   - 81: {fileID: 709545338}
-  - 114: {fileID: 709545342}
+  - 114: {fileID: 709545343}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1021,7 +1058,7 @@ Transform:
   - {fileID: 181480880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &709545342
+--- !u!114 &709545343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1029,7 +1066,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 709545336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2bc2383e1d99f4c9aa15d95cb45694, type: 3}
+  m_Script: {fileID: 11500000, guid: a0e8ce2f90d39064b917b4525b805da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health:
@@ -1040,8 +1077,8 @@ MonoBehaviour:
     bar: {fileID: 1573063924}
     maxVal: 100
     currentVal: 100
-  questionUrl: lrgs.ftsm.ukm.my/users/a150737/game/upload2.php
-  Url2: lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE2.php
+  questionUrl: lrgs.ftsm.ukm.my/users/a150737/game/allupload.php
+  Url: lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE2.php
   questions: []
   titleID: 
   title: {fileID: 423645239}
@@ -1054,10 +1091,12 @@ MonoBehaviour:
   btn1: {fileID: 1439403115}
   score: 0
   total_score: {fileID: 0}
-  username: {fileID: 1133880331}
+  username: {fileID: 586316061}
   Gameover: {fileID: 953573669}
-  messagescore: {fileID: 2084435226}
   Gameover_lose: {fileID: 1574554172}
+  messagescore: {fileID: 2084435226}
+  tablescore: question2
+  time: {fileID: 1245922417}
 --- !u!1 &814188394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1173,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: gobackmenu
         m_Mode: 1
         m_Arguments:
@@ -1257,7 +1296,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: checkAns
         m_Mode: 5
         m_Arguments:
@@ -1395,7 +1434,7 @@ RectTransform:
   m_Children:
   - {fileID: 54118077}
   m_Father: {fileID: 181480880}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.06330239, y: -0.014055427}
@@ -1516,80 +1555,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071435438}
---- !u!1 &1133880330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1133880333}
-  - 222: {fileID: 1133880332}
-  - 114: {fileID: 1133880331}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1133880331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133880330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.093103446, g: 0.0732505, b: 0.0732505, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Text
---- !u!222 &1133880332
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133880330}
---- !u!224 &1133880333
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133880330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 181480880}
-  m_RootOrder: 9
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 318, y: -244.75}
-  m_SizeDelta: {x: 321, y: 103.5}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1143382867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1865,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: checkAns
         m_Mode: 5
         m_Arguments:
@@ -1946,6 +1911,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1196917760}
+--- !u!1 &1245922415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1245922416}
+  - 222: {fileID: 1245922418}
+  - 114: {fileID: 1245922417}
+  m_Layer: 5
+  m_Name: Timetxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1245922416
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245922415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 181480880}
+  m_RootOrder: 10
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -183.99962, y: 321.9999}
+  m_SizeDelta: {x: 254, y: 48}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1245922417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245922415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Timer
+--- !u!222 &1245922418
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245922415}
 --- !u!1 &1269227499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -2289,7 +2328,7 @@ RectTransform:
   m_Children:
   - {fileID: 81095582}
   m_Father: {fileID: 181480880}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.06325089, y: -0.01406258}
@@ -2520,7 +2559,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709545342}
+      - m_Target: {fileID: 709545343}
         m_MethodName: checkAns
         m_Mode: 5
         m_Arguments:
@@ -2831,7 +2870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: kkk
+  m_Text: 0
 --- !u!222 &2084435227
 CanvasRenderer:
   m_ObjectHideFlags: 0

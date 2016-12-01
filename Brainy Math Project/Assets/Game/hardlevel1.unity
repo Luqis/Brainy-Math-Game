@@ -379,7 +379,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 394584733}
-  - 114: {fileID: 394584732}
   - 114: {fileID: 394584734}
   m_Layer: 0
   m_Name: GameObject
@@ -388,43 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &394584732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 394584731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e8ce2f90d39064b917b4525b805da2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health:
-    bar: {fileID: 0}
-    maxVal: 0
-    currentVal: 0
-  player_health:
-    bar: {fileID: 0}
-    maxVal: 0
-    currentVal: 0
-  questionUrl: 687474703a2f2f6c6f63616c686f73742f67616d652f75706c6f61642e706870
-  Url: lrgs.ftsm.ukm.my/users/a150737/game/updateScoreE1.php
-  questions: []
-  titleID: 
-  title: {fileID: 0}
-  Choice1: {fileID: 0}
-  Choice2: {fileID: 0}
-  Choice3: {fileID: 0}
-  Choice4: {fileID: 0}
-  Answer: 
-  i: 0
-  btn1: {fileID: 0}
-  score: 0
-  total_score: {fileID: 0}
-  username: {fileID: 0}
-  Gameover: {fileID: 0}
-  Gameover_lose: {fileID: 0}
-  messagescore: {fileID: 0}
 --- !u!4 &394584733
 Transform:
   m_ObjectHideFlags: 0
@@ -814,7 +776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &760672598
 MonoBehaviour:
   m_ObjectHideFlags: 0

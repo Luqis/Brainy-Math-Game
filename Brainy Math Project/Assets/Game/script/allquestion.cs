@@ -32,8 +32,10 @@ public class allquestion : MonoBehaviour {
 	public Text messagescore;
 	public GameObject Gameover_lose;
 	public string tablescore;
-
-
+	public GameObject Hero;
+	public Animator HeroAnim;
+	float animTime;
+	bool startTime = false;
 
 	IEnumerator Start(){
 
@@ -55,8 +57,25 @@ public class allquestion : MonoBehaviour {
 		prefmanager playerScript4 = thePlayer4.GetComponent<prefmanager>();
 		username.text = playerScript4.userID;
 
+		InvokeRepeating ("minusTime", 1.0f, 1.0f);
+	}
 
+	void Update(){
+	
+	}
 
+	void minusTime (){
+		if (startTime == true) {
+			animTime--;
+			if (animTime <= 0.0f) {
+				HeroAnim.SetBool ("attack", false);
+				HeroAnim.SetBool ("idle", false);
+				startTime = false;
+			}
+		}
+		if (startTime == false) {
+			animTime = 1.2f;
+		}
 	}
 
 	public void Hide(){
@@ -64,13 +83,12 @@ public class allquestion : MonoBehaviour {
 		player_health.Initialize ();
 		getRandomQuestion ();
 		btn1.gameObject.SetActive(false);
+		Hero.gameObject.SetActive (true);
 	}
 
 	public void gobackmenu(){
 		SceneManager.LoadScene ("SubLevelE", LoadSceneMode.Single);
 	}
-
-
 
 	void getRandomQuestion(){
 
@@ -106,20 +124,15 @@ public class allquestion : MonoBehaviour {
 			Debug.Log(totalscore);
 
 			WWW download2 = new WWW(Url, form2);
-		yield return download2;
-		Debug.Log (download2.text);
-
+			yield return download2;
+			Debug.Log (download2.text);
+			
+			Hero.gameObject.SetActive (false);
 			Gameover.SetActive (true);
 			messagescore.text = totalscore;
 
 		}
-
-
-
-
-
-
-
+		
 
 	public void Show(int num){
 		
@@ -131,9 +144,7 @@ public class allquestion : MonoBehaviour {
 		Answer = GetDataValue (questions [num], "ans:");
 		titleID =GetDataValue (questions [num], "TitleID:");
 	}
-
-
-
+		
 	string GetDataValue (string data, string index){
 		string value = data.Substring (data.IndexOf(index)+index.Length);
 		if (value.Contains ("|")) {
@@ -148,11 +159,27 @@ public class allquestion : MonoBehaviour {
 			Debug.Log ("CORRECT");
 			health.CurrentVal -= 10;
 			score++;
+			if (animTime > 0.0f) {
+				HeroAnim.SetBool ("attack", true);
+				startTime = true;
+			}
+			if (animTime <=0.0f) {
+				startTime = false;
+			}
+
 			getRandomQuestion ();
 
 		} else {
 			Debug.Log ("Wrong");
 			player_health.CurrentVal -= 20;
+			if (animTime > 0.0f) {
+				HeroAnim.SetBool("idle", true);
+				startTime = true;
+			}
+			if (animTime <=0.0f) {
+				startTime = false;
+			}
+		
 			if (player_health.CurrentVal <= 0) {
 				Debug.Log ("GAME OVER");
 				StartCoroutine ("updatescore");
