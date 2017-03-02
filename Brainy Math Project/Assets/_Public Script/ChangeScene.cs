@@ -14,4 +14,9 @@ public class ChangeScene : MonoBehaviour {
 		Destroy(GameObject.Find("MUSIC"));	
 	}
 
+	public void Logout(string sceneName){
+		Destroy (GameObject.Find ("prefManager"));
+		SceneManager.LoadScene (sceneName);
+	}
+
 }

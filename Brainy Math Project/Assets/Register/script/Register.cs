@@ -9,13 +9,13 @@ public class Register : MonoBehaviour {
 	private bool done = false;
 	public static string username = "";
 	public static string password = "";
-
+	public static string gender = "3";
 	private string cpassword = "";
 	public string Confirmpassword="";
 
 
 
-	string userUrl = "lrgs.ftsm.ukm.my/users/a150737/game/register.php";
+	string userUrl = "lrgs.ftsm.ukm.my/users/a150737/game/register2.php";
 
 	public GameObject window;
 	public Text messageField;
@@ -52,6 +52,16 @@ public class Register : MonoBehaviour {
 
 	}
 
+	public void genderMale (){
+		gender = "1";
+		Debug.Log (gender);
+	}
+
+	public void genderFemale (){
+		gender = "0";
+		Debug.Log (gender);
+	}
+
 	public void getUsername (string getname){
 		username = getname;
 	}
@@ -65,11 +75,15 @@ public class Register : MonoBehaviour {
 	}
 
 	public void Create (){
-		
-		if (password == cpassword && password != "") {
-			
+
+		if (password == cpassword && password != "" && gender == "3") {
+			msg = true;
+			Show ("Please Select Gender");
+		} 
+		else if (password == cpassword && password != "") {
 			StartCoroutine ("x");
-		} else {
+		}
+		else {
 			msg = true;
 			Show ("Password Not Match!");
 		}
@@ -83,6 +97,7 @@ public class Register : MonoBehaviour {
 		WWWForm form = new WWWForm ();
 		form.AddField ("usernamePost", username);
 		form.AddField ("passwordPost", password);
+		form.AddField ("genderPost", gender);
 		WWW	www = new WWW (userUrl, form);
 
 		yield return www;
@@ -102,6 +117,8 @@ public class Register : MonoBehaviour {
 
 
 	}
+
+
 
 
 

@@ -25,6 +25,7 @@ public class star : MonoBehaviour {
 		prefmanager playerScript2 = thePlayer2.GetComponent<prefmanager>();
 		username.text = playerScript2.userID;
 
+		//1st button
 		WWWForm form = new WWWForm ();
 		form.AddField ("usernamePost", username.text);
 		form.AddField ("scorePost", scoredb1);
@@ -39,7 +40,7 @@ public class star : MonoBehaviour {
 			star1.SetActive (true);
 			star2.SetActive (true);
 			star3.SetActive (true);
-		}else if( userscore >70 &&  userscore < 100){
+		}else if( userscore >=70 &&  userscore < 100){
 			star1.SetActive (true);
 			star2.SetActive (true);
 		}else if (userscore >=40 &&  userscore < 70){
@@ -47,13 +48,8 @@ public class star : MonoBehaviour {
 		}
 
 		score1.text = www.text;
-	
 
-
-
-
-
-
+	//2nd button
 	WWWForm form2= new WWWForm ();
 	form2.AddField ("usernamePost", username.text);
 		form2.AddField ("scorePost",scoredb2);
@@ -68,7 +64,7 @@ public class star : MonoBehaviour {
 		star4.SetActive (true);
 		star6.SetActive (true);
 		star5.SetActive (true);
-	}else if( userscore2 >70 &&  userscore2 < 100){
+	}else if( userscore2 >=70 &&  userscore2 < 100){
 		star4.SetActive (true);
 		star5.SetActive (true);
 	}else if (userscore2 >=40 &&  userscore2 < 70){

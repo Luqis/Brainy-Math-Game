@@ -14,6 +14,11 @@ public class Login : MonoBehaviour {
 	public Text messageField;
 	private bool msg = false;
 
+	public void Start (){
+		username = "";
+		password = "";
+	}
+
 	public void Show(string message){
 		if (msg == true) {
 			messageField.text = message;
@@ -24,19 +29,22 @@ public class Login : MonoBehaviour {
 	public void Hide(){
 		window.SetActive (false);
 	}
-
-
+		
 	public void getUsername (string getname){
 		username = getname;
 	}
 
 	public void getPassword (string getpass){
 		password= getpass;
-}
-
+	}
+		
 	public void Mula (){
-
+		if (username == "" && password == "") {
+			msg = true;
+			Show ("Please Insert Username");
+		} else {
 		StartCoroutine ("login");
+		}
 	}
 		
 
@@ -65,8 +73,7 @@ public class Login : MonoBehaviour {
 		else if(x =="No this username"){
 			msg = true;
 
-
-			Show ("No This Username, please register!");
+			Show ("Username not registered, please register first!");
 		}
 
 		}

@@ -12,6 +12,10 @@ public class Question : MonoBehaviour {
 	[SerializeField]
 	private Stat2 player_health;
 
+	public AudioClip win;
+	public AudioClip lose;
+	AudioSource sound;
+
 	List<int> randomNumbers = new List<int>();
 	public string questionUrl = "";
 	public string Url = "";
@@ -38,6 +42,7 @@ public class Question : MonoBehaviour {
 	bool startTime = false;
 
 	IEnumerator Start(){
+		sound = GetComponent<AudioSource>();
 		WWWForm table_form = new WWWForm();
 		table_form.AddField("questPost", tablescore);
 		WWW questionData = new WWW (questionUrl,table_form);
@@ -56,10 +61,24 @@ public class Question : MonoBehaviour {
 
 		InvokeRepeating ("minusTime", 1.0f, 1.0f);
 
+
+
+	}
+
+	void winsound() {
+		sound.PlayOneShot(win, 0.7F);
+	}
+
+	void losesound() {
+		sound.PlayOneShot(lose, 0.7F);
 	}
 
 	void Update(){
-		time.text = "Timer: " + timeLeft;
+		time.text = "" + timeLeft;
+		if (timeLeft <=0) {
+			Gameover_lose.SetActive (true);
+		}
+
 	}
 
 	void minusTime (){
@@ -88,7 +107,7 @@ public class Question : MonoBehaviour {
 			//Debug.Log ("Correct Answer: " + score);
 			//Debug.Log ("total ques: " + (questions.Length-1));
 			//Debug.Log("Total_score: " + (score/(questions.Length-1))*100);
-
+			winsound();
 			StartCoroutine ("updatescore");
 
 
@@ -115,9 +134,9 @@ public class Question : MonoBehaviour {
 			Debug.Log(totalscore);
 
 			WWW download2 = new WWW(Url, form2);
-		yield return download2;
-		Debug.Log (download2.text);
-
+			yield return download2;
+			Debug.Log (download2.text);
+			time.text = "";
 			Gameover.SetActive (true);
 			messagescore.text = totalscore;
 
@@ -153,12 +172,15 @@ public class Question : MonoBehaviour {
 			timeLeft += 2;
 			getRandomQuestion ();
 
+
+
 		} else {
 			Debug.Log ("Wrong");
 			player_health.CurrentVal -= 20;
 			timeLeft -= 5;
 			if (player_health.CurrentVal <= 0) {
 				Debug.Log ("GAME OVER");
+				losesound ();
 				Gameover_lose.SetActive (true);
 
 			}
