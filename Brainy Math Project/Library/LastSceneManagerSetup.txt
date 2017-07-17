@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SubLevel/SubLevelM.unity
+- path: Assets/_Splash Screen/SplashScreen.unity
   isLoaded: 1
   isActive: 1
